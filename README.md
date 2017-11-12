@@ -41,7 +41,7 @@ Once you have created the `resume.yaml` file at the root of the project, you can
 ruby scripts/generate_resume.rb
 ```
 
-Running this command will generate a file called `resume.html` at the root of the project. Now you can simply open this in a browser, and print it (*make sure than the printed page has no margins, as the HTML generated will have its own margins set*).
+Running this command will generate a file called `resume.html` at the root of the project. Now you can simply open this in a browser, and print it (__make sure than the printed page has no margins, as the HTML generated will have its own margins set__).
 
 
 ## Compatibility
