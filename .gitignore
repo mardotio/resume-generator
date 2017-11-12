@@ -1,0 +1,7 @@
+# Stylesheets data
+.sass-cache
+*.css*
+
+# Generated files and resume data
+*.html
+*.y*ml

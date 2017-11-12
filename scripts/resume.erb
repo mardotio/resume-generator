@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Krona+One|Muli" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+  </head>
+
+  <body>
+    <div>
+      <h1 class="name"><%=@name%></h1>
+      <li>
+        <% for @info in @contact_info %>
+        <ul class="contact-info"><%=@info%></ul>
+        <% end %>
+      </li>
+    </div>
+
+    <div>
+      <% if @profile %>
+      <h2 class="section-header">Profile</h2>
+      <span class="hr"></span>
+      <p>
+        <%=@profile%>
+      </p>
+      <% end %>
+
+      <% for @section in @sections.keys %> 
+      <h2 class="section-header"><%=@section.split('_').map { |word| word.capitalize }.join(' ')%></h2>
+      <span class="hr"></span>
+      <% for @row in @sections[@section] %>
+      <div class="section-row">
+        <div class="section-desc">
+          <%=@row['desc']%>
+        </div>
+        <div class="section-info">
+          <ul>
+            <% if @row['title'] %>
+            <li class="info-title"><%=@row['title']%></li>
+            <% end %>
+            <% if @row['location'] %>
+            <li class="info-location"><%=@row['location']%></li>
+            <% end %>
+            <% for @data in @row['data'] %>
+            <li><%=@data%></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </body>
+</html>
