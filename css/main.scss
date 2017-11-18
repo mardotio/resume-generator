@@ -3,6 +3,12 @@ html {
   width: 215.9mm;
   height: 279.4mm;
   border: 1px solid red;
+  display: flex;
+  align-items: center;
+
+  @media print {
+    border: 0;
+  }
 }
 
 body, ul, h1, h2, h3 {
@@ -11,7 +17,7 @@ body, ul, h1, h2, h3 {
 }
 
 body {
-  padding: .79in 1in;
+  padding: 0 1in;
   font-size: 11pt;
 }
 
@@ -34,6 +40,15 @@ body {
       content: '';
     }
   }
+}
+
+.section-header {
+  margin-top: 5px;
+}
+
+.section-profile {
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .section-row {
