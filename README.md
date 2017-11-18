@@ -29,8 +29,8 @@ key values for each array element under your headers.
 |Key|Class|Required|Description|
 |---|-----|--------|-----------|
 |`title`|String|False|Main point for that row, will have slightly larger font than the rest of the values|
-|`description`|String|True|Description for that section (i.e. dates), will be displayed to the left of that section|
-|`location`|String|False|Will be displayed right under the title, will be in italics|
+|`desc`|String|True|Description for that section (i.e. dates), will be displayed to the left of that section|
+|`subtitle`|String|False|Will be displayed right under the title, will be in italics|
 |`data`|Array|True|Any other info, such as accomplishments,  each array element will be a new bullet|
 
 ## Generating Resume
@@ -46,4 +46,4 @@ Running this command will generate a file called `resume.html` at the root of th
 
 ## Compatibility
 
-The HTML generated has only been tested in Chrome and Safari.
+The generated HTML and styling has only been tested in Chrome and Safari.

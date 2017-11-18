@@ -5,3 +5,7 @@
 # Generated files and resume data
 *.html
 *.y*ml
+
+# Exceptions for examples
+!examples/*.html
+!examples/*.yaml

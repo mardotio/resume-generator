@@ -2,27 +2,27 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Krona+One|Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
   </head>
 
   <body>
-    <div>
+    <div class="header">
       <h1 class="name"><%=@name%></h1>
-      <li>
+      <ul>
         <% for @info in @contact_info %>
-        <ul class="contact-info"><%=@info%></ul>
+        <li class="contact-info"><%=@info%></li>
         <% end %>
-      </li>
+      </ul>
     </div>
 
     <div>
       <% if @profile %>
       <h2 class="section-header">Profile</h2>
       <span class="hr"></span>
-      <p>
+      <p class="section-profile">
         <%=@profile%>
       </p>
       <% end %>
@@ -40,8 +40,8 @@
             <% if @row['title'] %>
             <li class="info-title"><%=@row['title']%></li>
             <% end %>
-            <% if @row['location'] %>
-            <li class="info-location"><%=@row['location']%></li>
+            <% if @row['subtitle'] %>
+            <li class="info-subtitle"><%=@row['subtitle']%></li>
             <% end %>
             <% for @data in @row['data'] %>
             <li><%=@data%></li>
