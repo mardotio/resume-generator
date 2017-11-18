@@ -1,13 +1,12 @@
 require 'erb'
 require 'yaml'
-require 'pathname'
 
 class Resume
   attr_reader :root, :name, :contact_info, :sections, :template, :profile
 
   def initialize
-    @root = Pathname.new(__dir__).parent
-    @template = File.read(self.root + 'scripts' + 'resume.erb')
+    @root = File.expand_path('..', __dir__)
+    @template = File.read(File.join(self.root, 'scripts', 'resume.erb'))
   end
 
   def read_source(source)
@@ -32,7 +31,7 @@ class Resume
 end
 
 myresume = Resume.new
-resume_data = myresume.root + 'resume.yaml'
-resume = myresume.root + 'resume.html'
+resume_data = File.join(myresume.root, 'resume.yaml')
+resume = File.join(myresume.root, 'resume.html')
 myresume.read_source(resume_data)
 myresume.save_resume(resume)
