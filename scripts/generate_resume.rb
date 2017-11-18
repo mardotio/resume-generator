@@ -1,5 +1,7 @@
 require 'erb'
 require 'yaml'
+require 'sass'
+
 
 class Resume
   attr_reader :root, :name, :contact_info, :sections, :template, :profile
@@ -28,6 +30,18 @@ class Resume
       f.write(render)
     end
   end
+
+  def compile_styles
+    options = {
+      cache: true,
+      syntax: :scss,
+      style: :compressed,
+      filename: 'css/main.scss',
+    }
+
+    render = Sass::Engine.new(File.read('css/main.scss'), options).render
+    File.write('css/main.css', render)
+  end
 end
 
 myresume = Resume.new
@@ -35,3 +49,4 @@ resume_data = File.join(myresume.root, 'resume.yaml')
 resume = File.join(myresume.root, 'resume.html')
 myresume.read_source(resume_data)
 myresume.save_resume(resume)
+myresume.compile_styles
