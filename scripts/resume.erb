@@ -11,11 +11,11 @@
   <body>
     <div>
       <h1 class="name"><%=@name%></h1>
-      <li>
+      <ul>
         <% for @info in @contact_info %>
-        <ul class="contact-info"><%=@info%></ul>
+        <li class="contact-info"><%=@info%></li>
         <% end %>
-      </li>
+      </ul>
     </div>
 
     <div>
@@ -40,8 +40,8 @@
             <% if @row['title'] %>
             <li class="info-title"><%=@row['title']%></li>
             <% end %>
-            <% if @row['location'] %>
-            <li class="info-location"><%=@row['location']%></li>
+            <% if @row['subtitle'] %>
+            <li class="info-subtitle"><%=@row['subtitle']%></li>
             <% end %>
             <% for @data in @row['data'] %>
             <li><%=@data%></li>
